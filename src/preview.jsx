@@ -18,7 +18,7 @@ class Preview extends React.Component {
     let markdown = this.props.text;
     return (
     <div>
-    <h1>Preview</h1>
+    <h1 style={{textAlign: "center"}}>Preview</h1>
     <div
     id = "preview"
     dangerouslySetInnerHTML = {{__html: marked(markdown)}}

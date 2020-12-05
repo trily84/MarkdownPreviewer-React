@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Editor from "./editor";
 import Preview from "./preview";
-<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+import 'bootstrap/dist/css/bootstrap.css';
+import './index.css';
 
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 
 class App extends React.Component {
  state = {
@@ -11,7 +13,7 @@ class App extends React.Component {
 
 ## h2
 
-[my portoflio](http://treehausllc.com)
+[my portfolio](http://treehausllc.com)
 
 <dl>
   <dt>Definition List</dt>  
@@ -30,7 +32,7 @@ class App extends React.Component {
 
 *italic text*
 
-![image](http://treehausllc.com/projects/6thandgrove.html)
+![mario](https://pm1.narvii.com/7280/99faa236aafd49c34f011f56f728a36439e72126r1-256-256v2_hq.jpg)
 
 \`This is an example of inline code\`
 
@@ -53,15 +55,26 @@ function exampleOf() {
   render() {
     console.log(this.state)
     return (
-      <React.Fragment>
-        <Editor
-        onChange = {this.handleChange}
-        text = {this.state.inputValue}
-        />
-        <Preview
-        text = {this.state.inputValue}
-        />
-      </React.Fragment>
+      <div className = "grid-container">
+        <div className = "row">
+          <div className = "col text-center">
+            <h1 id = "Title">Markdown Previewer</h1>
+          </div>
+        </div>
+        <div className = "row">
+          <div className = "col-md-6">
+            <Editor className = "App"
+            onChange = {this.handleChange}
+            text = {this.state.inputValue}
+            />
+          </div>
+          <div className = "col-md-6">
+            <Preview
+            text = {this.state.inputValue}
+            />
+          </div>
+        </div>
+      </div>
     );
   }
 }
